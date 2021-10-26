@@ -21,7 +21,7 @@ public class Main{
        System.out.print("\t\tYour response : ");
       
        res=sc.nextInt();
-       System.out.println("\n\t\t*****************************************");
+     //  System.out.println("\n\t\t********************************************");
        switch (res) {
            case 1:
              
