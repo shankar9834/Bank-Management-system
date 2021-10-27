@@ -10,7 +10,11 @@ public class Account {
     protected String  mobileNum;
     protected String password;
     protected String AccountNum;
-    protected String balance="0";    
+    protected String balance="0";   
+    protected String Address;
+    protected String DateOfBirth;
+    protected String AdharNUmber;
+
     
     public Scanner str=new Scanner(System.in);
    // Scanner num=new Scanner(System.in);
@@ -32,13 +36,23 @@ public class Account {
        String m=str.next();
        System.out.print("\n\t\tEnter your Password(3 charactered) : ");
        String n=str.next();
-       
+       System.out.print("\n\t\tEnter your Address(without space) : ");
+       String ad=str.next();
+       System.out.print("\n\t\tEnter your Date of birth(dd/mm/yy) : ");
+       String db=str.next();
+       System.out.print("\n\t\tEnter your Adhaar Number(without space) : ");
+       String adh=str.next();
+
+
          username=nm;
-         mobileNum=m;
          password=n;
-         
-         int rand=(int)Math.floor(Math.random()*1000);
-         AccountNum=rand+"";
+         mobileNum=m;
+         Address=ad;
+         DateOfBirth=db;
+         AdharNUmber=adh;
+
+                int rand=(int)Math.floor(Math.random()*1000);
+              AccountNum=rand+"";
          
          nm=nm+".txt";
          
@@ -48,7 +62,8 @@ public class Account {
             FileWriter fw=new FileWriter(nm,true);
             BufferedWriter bf=new BufferedWriter(fw);
              
-           
+         // this is the sequence by which data gets stored in Account datails file  
+        
            bf.write(username);
            bf.write("\n");
            bf.write(password);
@@ -57,8 +72,16 @@ public class Account {
            
            bf.write("\n");
            bf.write(mobileNum);
+           
             
            bf.write("\n");
+           bf.write(Address);
+           bf.write("\n");
+           bf.write(DateOfBirth);
+            bf.write("\n");
+            
+           bf.write(AdharNUmber);
+            bf.write("\n");
            bf.close();
             
 
