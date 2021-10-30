@@ -71,6 +71,8 @@ public class Account {
            bf.write(AccountNum);
            
            bf.write("\n");
+           bf.write(balance);
+           bf.write("\n");
            bf.write(mobileNum);
            
             
