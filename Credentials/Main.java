@@ -1,6 +1,6 @@
+package Credentials;
 import java.util.Scanner;
 import Requirements.Account;
-import Credentials.Login;
 public class Main{
 
     public static void main(String[] args)
