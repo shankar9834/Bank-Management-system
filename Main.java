@@ -39,7 +39,8 @@ public class Main extends Login
                     String abc = bfr.readLine();
                     String Name = bfr.readLine();
                     bfr.close();
-
+                    int choice2=1;
+                 do{
                     System.out.println("");
                     System.out.println("--------------------------------------------------------------------------------------");
                     System.out.println("|                               STUDENTS CORPORATE BANK                              |");
@@ -54,9 +55,9 @@ public class Main extends Login
                     System.out.println("|    6. Show Details                                                                 |");
                     System.out.println("|    7. LOGOUT and Exit                                                              |");
                     System.out.println("|------------------------------------------------------------------------------------|");
-                    System.out.print("Please Select Your Choice : ");
-                    int choice2 = input.nextInt();
-                    System.out.println("Please Wait...");
+                    System.out.print("\tPlease Select Your Choice : ");
+                     choice2 = input.nextInt();
+                    System.out.println("\tPlease Wait...");
                     if (choice2 == 1)
                     {
                         Check_Balance check = new User();
@@ -89,26 +90,35 @@ public class Main extends Login
                     }
                     else if (choice2 == 7)
                     {
-                        System.out.println("Logging Out...");
-                        System.exit(0);
+                        System.out.println("\tLogging Out...");
+                        break;
                     }
-                    else
-                    {
-                        System.out.println("Invalid choice...");
-                    }
-                }
-                System.out.print("DO you want to continue (y/n) : ");
+                    
+                    System.out.print("\t Do you want to continue with login page(y/n) : ");
+                      char k1=kt.next().charAt(0);
+                      if(k1=='n')
+                      {
+                         choice2=0;
+                      }
+                      else{
+                          choice2=1;
+                      }
+                    
+
+                   
+                } while(choice2==1);
+                System.out.print("\tDO you want to continue (y/n)(Home page) : ");
                 char ckt=kt.next().charAt(0);;
                 if(ckt=='n'||ckt!='y'){  choice =3;} 
 
 
-            }
+            }}
             else if (choice == 2)
             {    
                 Account new_account = new Account();
-                long Account_Number = new_account.create_account();
+                long Account_Numbe = new_account.create_account();
                 System.out.println("\tsuccessfully Created your account ...");
-                System.out.println("\tYour Account Number is : " + Account_Number);
+                System.out.println("\tYour Account Number is : " + Account_Numbe);
                 System.out.print("\tDO you want to continue(y/n) : ");
                  
                 char checkst=kt.next().charAt(0);;
@@ -129,6 +139,7 @@ public class Main extends Login
                 char ck=kt.next().charAt(0);
                 if(ck=='n'||ck!='y'){  choice =3;}
             }
-        }while(choice!=3);
-    }
+        
+    }while(choice!=3);
+  }
 }

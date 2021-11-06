@@ -116,7 +116,8 @@ interface Change_Details extends Imp_Functions
             else if (choice2 == 8)
             {
                 System.out.println("Exiting...");
-                System.exit(0);
+               // System.exit(0);
+               return ;
             }
             else
             {
