@@ -1,4 +1,4 @@
-package Main;
+//package Main;
 
 import java.io.*;
 import java.sql.SQLOutput;
@@ -8,9 +8,11 @@ import java.util.Scanner;
 public class Main extends Login
 {
     public static void main(String[] args) throws IOException
-    {
-        Scanner input = new Scanner(System.in);
-        for (int i = 0; i < 1; i++)
+    { 
+          Scanner kt=new Scanner(System.in);
+          Scanner input = new Scanner(System.in);
+          int choice;
+        do
         {
             System.out.println("--------------------------------------------------------------------------------------");
             System.out.println("|                               STUDENTS CORPORATE BANK                              |");
@@ -19,9 +21,9 @@ public class Main extends Login
             System.out.println("|    2. Create New Account                                                           |");
             System.out.println("|    3. Exit                                                                         |");
             System.out.println("|------------------------------------------------------------------------------------|");
-            System.out.print("Please Select Your Choice : ");
-            int choice = input.nextInt();
-            System.out.println("Please Wait...");
+            System.out.print("\tPlease Select Your Choice : ");
+             choice = input.nextInt();
+            System.out.println("\tPlease Wait...");
 
             if (choice == 1)
             {
@@ -95,23 +97,38 @@ public class Main extends Login
                         System.out.println("Invalid choice...");
                     }
                 }
+                System.out.print("DO you want to continue (y/n) : ");
+                char ckt=kt.next().charAt(0);;
+                if(ckt=='n'||ckt!='y'){  choice =3;} 
+
+
             }
             else if (choice == 2)
-            {
+            {    
                 Account new_account = new Account();
                 long Account_Number = new_account.create_account();
-                System.out.println("Your account is successfully Created...");
-                System.out.println("Your Account Number is : " + Account_Number);
+                System.out.println("\tsuccessfully Created your account ...");
+                System.out.println("\tYour Account Number is : " + Account_Number);
+                System.out.print("\tDO you want to continue(y/n) : ");
+                 
+                char checkst=kt.next().charAt(0);;
+                 if(checkst=='n'||checkst!='y'){  choice =3;}
+
+
             }
             else if (choice == 3)
             {
                 System.out.println("Exiting...");
-                System.exit(0);
+               
             }
             else
             {
                 System.out.println("Invalid choice...");
+                System.out.print("DO you want to continue choose again(y/n) : ");
+              
+                char ck=kt.next().charAt(0);
+                if(ck=='n'||ck!='y'){  choice =3;}
             }
-        }
+        }while(choice!=3);
     }
 }
