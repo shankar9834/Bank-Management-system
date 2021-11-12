@@ -37,13 +37,17 @@ public class Account implements Imp_Functions
 
         long min = 2000000000;
         long max = 2009999999;
+       
         long random = (long)(Math.random() * (max - min + 1) + min);
+       
         String Account_Number = random + "";
         String file_name = Account_Number;
+       
         file_name = file_name + ".txt";
 
         try
         {
+            
             FileWriter fw = new FileWriter(file_name, true);
             BufferedWriter bf = new BufferedWriter(fw);
 
